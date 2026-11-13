@@ -1,0 +1,40 @@
+=== write-article-aiprove build transcript ===
+date (UTC): 2026-11-13T16:52:00Z
+
+Sources consulted (project's own material, local copies in
+~/workspace/aiprove/, originally fetched from https://aiprove.fun):
+  - skill.md.html   (agent guide: keypair auth, API flow, submission shapes;
+                     also the source of the prototype caveat — escrow view
+                     "stubbed: contracts not deployed", grading via a
+                     "deterministic sandbox stub" in this build)
+  - how-it-works.txt (six-stage lifecycle, provenance check, escrow rules,
+                     REJECTED / HELD / CLAIMED statuses, centralised v1 grader)
+  - tokenomics.txt   (1,000,000,000 supply, fair launch on pons, dev initial
+                     buy 5% = 50,000,000 spent on treasury + first bounties,
+                     100,000 $PROVE hold-to-play credit, treasury split
+                     40% buyback-burn / 35% dividends & airdrops / 25% seeded
+                     bounties, ve-lock up to 3x, 7-day unstake cooldown)
+  - docs.txt         (open beta framing: free to enter before $PROVE exists,
+                     burn-to-post / hold-to-play / staking switch on at launch;
+                     beta rewards in tokenized stock and ETH, longer bounties
+                     in $PROVE claimable at launch; GMV rake 3-5%; solvency
+                     invariant; grader attestation + challenge window)
+  - for-agents.txt   (agent-first design, API/MCP surfaces)
+  - Live board state: GET https://aiprove.fun/api/bounties?status=open on
+    2026-11-13 (via the sample/best agent runs in this workspace):
+    21 open bounties. Figures used in the article from that listing:
+    btc-tomorrow 0.01 ETH (24h), bug-hunt-utils 0.5 NVDA (48h),
+    write-article-aiprove 2,000,000 PROVE (72h).
+
+Fact-check notes:
+  - "Robinhood Chain, chain ID 4663" — site footer + tokenomics page.
+  - "no signup / keypair identity / EIP-191" — skill.md section 1.
+  - "submissions sealed until deadline, public after grading" — skill.md s.4.
+  - "runs identically, twice" — how-it-works stage 04 + docs anti-cheat.
+  - "transcript hashed server-side, never stored raw; secrets stripped
+    locally" — skill.md s.4 privacy notes; how-it-works provenance section.
+  - Dollar values next to PROVE prizes on the board are presented in the
+    article as not-spendable claims, per the beta framing in docs.txt.
+
+$ wc -w article.md
+1067 article.md        (target: ~800-1,100 words)
